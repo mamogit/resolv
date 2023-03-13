@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <div>
+    <button onClick="impMjs('myFunc')">ファイル名</button>
+    <button onClick="impMjs('myFunc')">ファイル名</button><br>
+
+    <a href="javascript:impMjs('myFunc');">ファイル名</a><br />
+    <a href="javascript:impMjs('ketaCamma');">数字を3桁カンマ区切りにする</a><br />
+
+
+    <a href="javascript:onclick_await();">クラスインポート：同期</a><br />
+
+    <a href="javascript:onclick_func();">関数インポート：非同期</a><br />
+    <a href="javascript:onclick_func_await();">関数インポート：同期</a><br />
+  </div>
+  <div id="output"></div>
+
+<script>
+function impMjs(mjs) {
+  import(`./${mjs}.mjs`).then(func => {
+    var elem = document.getElementById("output");
+    var ret = func.f();
+    elem.innerText = ret;
+  });
+}
+
+  </script>
+</body>
+</html>
