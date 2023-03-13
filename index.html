@@ -12,11 +12,9 @@
 
 <script>
 function impMjs(mjs) {
-  import(`./${mjs}.mjs`).then(func => {
-    document.getElementById("ret-val").innerText = func.f()
-  })
+  import(`./${mjs}.mjs`)
+  .then(func => document.getElementById("ret-val").innerText = func.f())
 }
-
-  </script>
+</script>
 </body>
 </html>
